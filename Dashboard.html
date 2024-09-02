@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptocurrency Dashboard</title>
+    <link rel="stylesheet" href="Dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cryptocurrency Dashboard</h1>
+        <div class="input-group">
+            <label for="crypto">Select Cryptocurrency:</label>
+            <select id="crypto">
+                <!-- Updated list of cryptocurrencies -->
+                <option value="bitcoin">Bitcoin (BTC)</option>
+                <option value="ethereum">Ethereum (ETH)</option>
+                <option value="ripple">Ripple (XRP)</option>
+                <option value="litecoin">Litecoin (LTC)</option>
+                <option value="cardano">Cardano (ADA)</option>
+                <option value="polkadot">Polkadot (DOT)</option>
+                <option value="binancecoin">Binance Coin (BNB)</option>
+                <option value="solana">Solana (SOL)</option>
+                <option value="dogecoin">Dogecoin (DOGE)</option>
+                <option value="shiba-inu">Shiba Inu (SHIB)</option>
+            </select>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Current Price</td>
+                    <td id="price">--</td>
+                </tr>
+                <tr>
+                    <td>24-Hour Market Cap</td>
+                    <td id="market-cap">--</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="chart-container">
+            <canvas id="priceChart"></canvas>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="Dashboard.js"></script>
+</body>
+</html>
