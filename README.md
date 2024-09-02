@@ -18,7 +18,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/your-username/cryptovista.git
+git clone https://github.com/pratik-tgit05/AITHON-EtherealElite
 Navigate to the project directory:
 
 bash
