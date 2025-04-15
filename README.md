@@ -59,4 +59,4 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 
 
 Contact
-For any inquiries or feedback, please reach out to assasnj@gmail.com,mnishant.work@gmail.com, pratik12122005@gmail.com, ramitgulati30@gmail.com
+For any inquiries or feedback, please reach out to assasnj@gmail.com, mnishant.work@gmail.com, pratik12122005@gmail.com, ramitgulati30@gmail.com
