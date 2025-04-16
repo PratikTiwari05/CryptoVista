@@ -1,4 +1,5 @@
-# CryptoVista
+# CryptoVista 
+(by @nishant-jain17, @PratikTiwari05, @NishantMishra31)
 
 **CryptoVista** is an interactive Bitcoin portal designed to provide real-time Bitcoin insights and engage users with educational quizzes. This project includes features such as real-time Bitcoin prices, news updates, historical price trends, and an interactive quiz to test and expand users' knowledge about Bitcoin.
 
@@ -62,5 +63,4 @@ Ensure your changes include proper documentation and tests (if applicable).
 For any inquiries or feedback, feel free to reach out:  
 - assasnj@gmail.com  
 - mnishant.work@gmail.com  
-- pratik12122005@gmail.com  
-- ramitgulati30@gmail.com
+- pratik12122005@gmail.com
