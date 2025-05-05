@@ -1,62 +1,66 @@
-# AITHON-EtherealElite
-CryptoVista
-CryptoVista is an interactive Bitcoin portal designed to provide real-time Bitcoin insights and engage users with educational quizzes. This project includes features for displaying Bitcoin prices, news updates, historical price trends, and a quiz to test and expand users' knowledge about Bitcoin.
+# CryptoVista 
+(by @Nishant-Jain17, @PratikTiwari05, @NishantMishra31)
 
-Features
-Real-Time Bitcoin Prices: Displays the latest Bitcoin prices.
-Latest News: Provides updates on recent news related to Bitcoin.
-Historical Price Trends: Visualizes historical Bitcoin price data.
-Interactive Quiz: A quiz with 10 questions to test and educate users on Bitcoin.
-Technologies Used
-HTML: Structure of the webpage.
-CSS: Styling and layout of the webpage.
-JavaScript: Interactive elements, including quiz functionality.
-React.js (planned): For a more dynamic user experience (if implemented).
-Chart.js (planned): For visualizing historical price trends (if implemented).
-How to Run the Project
-Clone the repository:
+**CryptoVista** is an interactive Bitcoin portal designed to provide real-time Bitcoin insights and engage users with educational quizzes. This project includes features such as real-time Bitcoin prices, news updates, historical price trends, and an interactive quiz to test and expand users' knowledge about Bitcoin.
 
-bash
-Copy code
-git clone https://github.com/pratik-tgit05/AITHON-EtherealElite
-Navigate to the project directory:
+## 🚀 Features
 
-bash
-Copy code
-cd cryptovista
-Open the index.html file in your browser to view the home page.
+- Real-Time Bitcoin Prices: Displays the latest Bitcoin prices.  
+- Latest News: Provides updates on recent Bitcoin-related news.  
+- Historical Price Trends: Visualizes historical Bitcoin price data.  
+- Interactive Quiz: A quiz with 10 questions to educate and challenge users on Bitcoin knowledge.
 
-Project Structure
-index.html: The main HTML file for the home page.
-quiz.html: The HTML file for the quiz page.
-styles.css: The CSS file for styling the website.
-script.js: The JavaScript file for handling quiz interactions and logic.
-Adding New Features
-To add new features or make changes to the project, follow these steps:
+## 🛠️ Technologies Used
 
-Create a new branch:
+- HTML – Structure of the webpage  
+- CSS – Styling and layout of the webpage  
+- JavaScript – Interactive elements, including quiz functionality  
+- React.js (planned) – For a more dynamic user experience  
+- Chart.js (planned) – For visualizing historical price trends
 
-bash
-Copy code
-git checkout -b feature-branch
-Make your changes.
+## 📦 How to Run the Project
 
-Commit your changes:
+1. Clone the repository:  
+   git clone https://github.com/pratik-tgit05/AITHON-EtherealElite
 
-bash
-Copy code
-git add .
-git commit -m "Add new feature or fix description"
-Push your changes:
+2. Navigate to the project directory:  
+   cd cryptovista
 
-bash
-Copy code
-git push origin feature-branch
-Create a pull request on GitHub to merge your changes into the main branch.
+3. Open the `index.html` file in your browser to view the homepage.
 
-Contribution
-Contributions are welcome! Please fork the repository and submit a pull request with your proposed changes. Make sure to include tests and documentation for any new features.
+## 📁 Project Structure
 
+cryptovista/  
+├── index.html        – Main HTML file (Home Page)  
+├── quiz.html         – HTML file for the Quiz Page  
+├── styles.css        – CSS file for website styling  
+├── script.js         – JavaScript for quiz logic and interactions
 
-Contact
-For any inquiries or feedback, please reach out to assasnj@gmail.com, mnishant.work@gmail.com, pratik12122005@gmail.com, ramitgulati30@gmail.com
+## 🧩 Adding New Features
+
+1. Create a new branch:  
+   git checkout -b feature-branch
+
+2. Make your changes.
+
+3. Commit your changes:  
+   git add .  
+   git commit -m "Add new feature or fix description"
+
+4. Push your branch:  
+   git push origin feature-branch
+
+5. Create a pull request on GitHub to merge your changes into the `main` branch.
+
+## 🤝 Contribution
+
+Contributions are welcome!  
+Please fork the repository, make your changes, and submit a pull request.  
+Ensure your changes include proper documentation and tests (if applicable).
+
+## 📬 Contact
+
+For any inquiries or feedback, feel free to reach out:  
+- assasnj@gmail.com  
+- mnishant.work@gmail.com  
+- pratik12122005@gmail.com
