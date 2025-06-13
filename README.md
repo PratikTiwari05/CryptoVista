@@ -61,6 +61,6 @@ Ensure your changes include proper documentation and tests (if applicable).
 ## 📬 Contact
 
 For any inquiries or feedback, feel free to reach out:  
-- jnishant.work@gmail.com
+- jnishant.work@gmail.com 
 - mnishant.work@gmail.com  
 - pratik12122005@gmail.com
