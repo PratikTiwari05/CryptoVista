@@ -82,7 +82,7 @@
             <h1 class="h1 hero-title">Master Bitcoin with Interactive Quizzes & Real-Time Insights</h1>
 
             <p class="hero-text">
-              Dive into our interactive quizzes and get real-time updates to enhance your Bitcoin knowledge. Test yourself and stay ahead in the world of crypto!
+              Dive into the crypto-world and get real-time updates to enhance your crypto knowledge. Test yourself and stay ahead in the world of crypto!
             </p>
 
             <a href="quiz.html" class="btn btn-primary">Challenge Yourself</a>
@@ -123,12 +123,12 @@
                     </a>
                   </div>
 
-                  <data class="card-value" value="46168.95">USD 46,168.95</data>
+                  <data class="card-value" value="46168.95"></data>
 
                   <div class="card-analytics">
-                    <data class="current-price" value="36641.20">36,641.20</data>
+                    <data class="current-price" value="36641.20"></data>
 
-                    <div class="badge red">-0.79%</div>
+                    <div class="badge red"></div>
                   </div>
 
                 </div>
@@ -145,12 +145,12 @@
                     </a>
                   </div>
 
-                  <data class="card-value" value="3480.04">USD 3,480.04</data>
+                  <data class="card-value" value="3480.04"></data>
 
                   <div class="card-analytics">
-                    <data class="current-price" value="36641.20">36,641.20</data>
+                    <data class="current-price" value="36641.20"></data>
 
-                    <div class="badge green">+10.55%</div>
+                    <div class="badge green"></div>
                   </div>
 
                 </div>
@@ -167,12 +167,12 @@
                     </a>
                   </div>
 
-                  <data class="card-value" value="1.00">USD 1.00</data>
+                  <data class="card-value" value="1.00"></data>
 
                   <div class="card-analytics">
-                    <data class="current-price" value="36641.20">36,641.20</data>
+                    <data class="current-price" value="36641.20"></data>
 
-                    <div class="badge red">-0.01%</div>
+                    <div class="badge red"></div>
                   </div>
 
                 </div>
@@ -189,12 +189,12 @@
                     </a>
                   </div>
 
-                  <data class="card-value" value="443.56">USD 443.56</data>
+                  <data class="card-value" value="443.56"></data>
 
                   <div class="card-analytics">
-                    <data class="current-price" value="36641.20">36,641.20</data>
+                    <data class="current-price" value="36641.20"></data>
 
-                    <div class="badge red">-1.24%</div>
+                    <div class="badge red"></div>
                   </div>
 
                 </div>
@@ -206,6 +206,58 @@
 
         </div>
       </section>
+      <script>
+  async function updateTrendBanner() {
+    const coins = ['bitcoin', 'ethereum', 'tether', 'binancecoin'];
+    const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${coins.join(',')}&order=market_cap_desc&sparkline=false&_=${Date.now()}`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+
+      const trendCards = document.querySelectorAll(".trend-card");
+
+      data.forEach((coin, index) => {
+        const card = trendCards[index];
+        if (!card) return;
+
+        // Update logo
+        const img = card.querySelector("img");
+        img.src = coin.image;
+        img.alt = `${coin.name} logo`;
+
+        // Update coin name + pair
+        const title = card.querySelector(".card-title");
+        title.innerHTML = `${coin.name} <span class="span">${coin.symbol.toUpperCase()}/USD</span>`;
+
+        // Update main price
+        const price = card.querySelector(".card-value");
+        price.textContent = `USD ${coin.current_price.toLocaleString()}`;
+        price.setAttribute("value", coin.current_price);
+
+        // Update volume/market cap (use whichever you prefer)
+        const market = card.querySelector(".current-price");
+        market.textContent = coin.market_cap.toLocaleString();
+        market.setAttribute("value", coin.market_cap);
+
+        // Update 24h change
+        const changeBadge = card.querySelector(".badge");
+        const change = parseFloat(coin.price_change_percentage_24h).toFixed(2);
+        changeBadge.textContent = `${change > 0 ? '+' : ''}${change}%`;
+        changeBadge.className = `badge ${change >= 0 ? 'green' : 'red'}`;
+      });
+    } catch (error) {
+      console.error('Error updating trend banner:', error);
+    }
+  }
+
+  // Run on page load and every minute
+  document.addEventListener("DOMContentLoaded", () => {
+    updateTrendBanner();
+    setInterval(updateTrendBanner, 60000); // refresh every 1 min
+  });
+</script>
+
 
       <!-- 
         - #MARKET
@@ -276,11 +328,11 @@
                     </div>
                   </td> 
 
-                  <td class="table-data last-price">$56,623.54</td>
+                  <td class="table-data last-price"></td>
 
-                  <td class="table-data last-update green">+1.45%</td>
+                  <td class="table-data last-update green"></td>
 
-                  <td class="table-data market-cap">$880,423,640,582</td>
+                  <td class="table-data market-cap"></td>
 
                   <td class="table-data">
                     <img src="chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
@@ -311,11 +363,11 @@
                     </div>
                   </td>
 
-                  <td class="table-data last-price">$56,623.54</td>
+                  <td class="table-data last-price"></td>
 
-                  <td class="table-data last-update red">-5.12%</td>
+                  <td class="table-data last-update red"></td>
 
-                  <td class="table-data market-cap">$880,423,640,582</td>
+                  <td class="table-data market-cap"></td>
 
                   <td class="table-data">
                     <img src="chart-2.svg" width="100" height="40" alt="loss chart" class="chart">
@@ -346,11 +398,11 @@
                     </div>
                   </td>
 
-                  <td class="table-data last-price">$56,623.54</td>
+                  <td class="table-data last-price"></td>
 
-                  <td class="table-data last-update green">+1.45%</td>
+                  <td class="table-data last-update green"></td>
 
-                  <td class="table-data market-cap">$880,423,640,582</td>
+                  <td class="table-data market-cap"></td>
 
                   <td class="table-data">
                     <img src="chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
@@ -381,11 +433,11 @@
                     </div>
                   </td>
 
-                  <td class="table-data last-price">$56,623.54</td>
+                  <td class="table-data last-price"></td>
 
-                  <td class="table-data last-update red">-3.75%%</td>
+                  <td class="table-data last-update red"></td>
 
-                  <td class="table-data market-cap">$880,423,640,582</td>
+                  <td class="table-data market-cap"></td>
 
                   <td class="table-data">
                     <img src="chart-2.svg" width="100" height="40" alt="loss chart" class="chart">
@@ -416,11 +468,11 @@
                     </div>
                   </td>
 
-                  <td class="table-data last-price">$56,623.54</td>
+                  <td class="table-data last-price"></td>
 
-                  <td class="table-data last-update green">+1.45%</td>
+                  <td class="table-data last-update green"></td>
 
-                  <td class="table-data market-cap">$880,423,640,582</td>
+                  <td class="table-data market-cap"></td>
 
                   <td class="table-data">
                     <img src="chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
@@ -451,11 +503,11 @@
                     </div>
                   </td>
 
-                  <td class="table-data last-price">$56,623.54</td>
+                  <td class="table-data last-price"></td>
 
-                  <td class="table-data last-update red">-2.22%</td>
+                  <td class="table-data last-update red"></td>
 
-                  <td class="table-data market-cap">$880,423,640,582</td>
+                  <td class="table-data market-cap"></td>
 
                   <td class="table-data">
                     <img src="chart-2.svg" width="100" height="40" alt="loss chart" class="chart">
@@ -486,11 +538,11 @@
                     </div>
                   </td>
 
-                  <td class="table-data last-price">$56,623.54</td>
+                  <td class="table-data last-price"></td>
 
-                  <td class="table-data last-update green">+0.8%</td>
+                  <td class="table-data last-update green"></td>
 
-                  <td class="table-data market-cap">$880,423,640,582</td>
+                  <td class="table-data market-cap"></td>
 
                   <td class="table-data">
                     <img src="chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
@@ -520,11 +572,11 @@
                     </div>
                   </td>
 
-                  <td class="table-data last-price">$56,623.54</td>
+                  <td class="table-data last-price"></td>
 
-                  <td class="table-data last-update green">+1.41%</td>
+                  <td class="table-data last-update green"></td>
 
-                  <td class="table-data market-cap">$880,423,640,582</td>
+                  <td class="table-data market-cap"></td>
 
                   <td class="table-data">
                     <img src="chart-1.svg" width="100" height="40" alt="profit chart" class="chart">
@@ -556,7 +608,7 @@
           <h2 class="h2 section-title">How It Works ?</h2>
 
           <p class="section-text">
-            Stacks is a production-ready library of stackable content blocks built in React Native.
+            Your step-by-step guide to start exploring, trading, and earning with cryptocurrencies — made simple for everyone.
           </p>
 
           <ul class="instruction-list">
@@ -574,7 +626,7 @@
                 <h3 class="h3 card-title">Download</h3>
 
                 <p class="card-text">
-                  Stacks Is A Production-Ready Library Of Stackable Content Blocks Built In React Native.
+                  Install the app to access the latest crypto tools and stay updated on market trends.
                 </p>
 
               </div>
@@ -593,7 +645,7 @@
                 <h3 class="h3 card-title">Connect Wallet</h3>
 
                 <p class="card-text">
-                  Stacks Is A Production-Ready Library Of Stackable Content Blocks Built In React Native.
+                  Securely link your crypto wallet to start managing your digital assets in one place.
                 </p>
 
               </div>
@@ -612,7 +664,7 @@
                 <h3 class="h3 card-title">Start Trading</h3>
 
                 <p class="card-text">
-                  Stacks Is A Production-Ready Library Of Stackable Content Blocks Built In React Native.
+                  Buy, sell, and exchange cryptocurrencies with real-time price tracking and analytics.
                 </p>
 
               </div>
@@ -631,7 +683,7 @@
                 <h3 class="h3 card-title">Earn Money</h3>
 
                 <p class="card-text">
-                  Stacks Is A Production-Ready Library Of Stackable Content Blocks Built In React Native.
+                  Explore staking, rewards, and profit opportunities with your growing crypto portfolio.
                 </p>
 
               </div>
@@ -642,13 +694,7 @@
         </div>
       </section>
 
-
-
-
-
-      <!-- 
-        - #ABOUT
-      -->
+      <!--#ABOUT-->
 
       <section class="section about" aria-label="about" data-section>
         <div class="container">
@@ -660,12 +706,10 @@
 
           <div class="about-content">
 
-            <h2 class="h2 section-title">What Is CryptoVista</h2>
+            <h2 class="h2 section-title">What Is <strong>CryptoVista</strong></h2>
 
             <p class="section-text">
-              Experience a variety of trading on Bitcost. You can use various types of coin transactions such as Spot
-              Trade, Futures
-              Trade, P2P, Staking, Mining, and margin.
+              Your only crypto partner in-need and indeed.
             </p>
 
             <ul class="section-list">
@@ -678,9 +722,8 @@
                 </div>
 
                 <p class="item-text">
-                  Experience a variety of trading on Bitcost. You can use various types of coin transactions such as
-                  Spot Trade, Futures
-                  Trade, P2P, Staking, Mining, and margin.
+                  Experience a variety of trading such as
+                  Spot Trade, Futures, Trade, P2P, Staking, Mining, and margin.
                 </p>
               </li>
 
@@ -692,9 +735,7 @@
                 </div>
 
                 <p class="item-text">
-                  Experience a variety of trading on Bitcost. You can use various types of coin transactions such as
-                  Spot Trade, Futures
-                  Trade, P2P, Staking, Mining, and margin.
+                  Just at your own ease!
                 </p>
               </li>
 
@@ -707,14 +748,7 @@
         </div>
       </section>
 
-
-
-
-
-      <!-- 
-        - #APP
-      -->
-
+      <!--#APP-->
       <section class="section app" aria-label="app" data-section>
         <div class="container">
 
@@ -723,7 +757,7 @@
             <h2 class="h2 section-title">Free Your Money & Invest With Confident</h2>
 
             <p class="section-text">
-              With Cryptor Trade, you can be sure your trading skills are matched
+              With us, you can be sure your trading skills are matched
             </p>
 
             <ul class="section-list">
@@ -780,15 +814,7 @@
 
     </article>
   </main>
-
-
-
-
-
-  <!-- 
-    - #FOOTER
-  -->
-
+  <!--#FOOTER -->
   <footer class="footer">
 
     <div class="footer-top" data-section>
@@ -803,12 +829,12 @@
 
           <h2 class="footer-title">Let's talk! 🤙</h2>
 
-          <a href="tel:+123456789101" class="footer-contact-link">+345 678 9101</a>
+          <a href="tel:+123456789101" class="footer-contact-link">+91 8840 860 225</a>
 
-          <a href="mailto:hello.cryptoVista@gmail.com" class="footer-contact-link"><hello class="cryptoVista"></hello> cryptoVista@gmail.com</a>
+          <a href="mailto:hello.cryptoVista@gmail.com" class="footer-contact-link"><hello class="cryptoVista"></hello> cryptovista@gmail.com</a>
 
           <address class="footer-contact-link">
-            SRM IST DELHI NCR CAMPUS GHAZIABAD-201204
+            Office to be located soon. Stay tuned!
           </address>
 
         </div>
@@ -884,7 +910,7 @@
           </li>
 
           <li>
-            <a href="#" class="footer-link">Bybit Learn</a>
+            <a href="#" class="footer-link">Vista Learn</a>
           </li>
 
           <li>
@@ -916,7 +942,7 @@
           </li>
 
           <li>
-            <a href="#" class="footer-link">About Bybit</a>
+            <a href="#" class="footer-link">Team</a>
           </li>
 
           <li>
@@ -944,7 +970,7 @@
       <div class="container">
 
         <p class="copyright">
-          &copy; 2024 CryptoVista All Rights Reserved by <a href="#" class="copyright-link">Etherealelite</a>
+          &copy; 2025 CryptoVista. All Rights Reserved. <a href="#" class="copyright-link"></a>
         </p>
 
         <ul class="social-list">
@@ -966,35 +992,17 @@
               <ion-icon name="logo-instagram"></ion-icon>
             </a>
           </li>
-
           <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
+  <a href="https://linkedin.com/in/nishant-mishra-" class="social-link" target="_blank" rel="noopener noreferrer">
+    <ion-icon name="logo-linkedin"></ion-icon>
+  </a>
+</li>
         </ul>
-
       </div>
     </div>
-
   </footer>
-
-
-
-
-
-  <!-- 
-    - custom js link
-  -->
   <script src="index.js" defer></script>
-
-  <!-- 
-    - ionicon link
-  -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 </body>
-
 </html>
