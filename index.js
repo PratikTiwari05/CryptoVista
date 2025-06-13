@@ -104,6 +104,11 @@ async function fetchTopCoins() {
     const data = await resp.json();
     tableBody.innerHTML = ""; // clear existing rows
     data.forEach((coin, idx) => {
+      addEventOnElem(
+        document.querySelectorAll("[data-add-to-fav]"),
+        "click",
+        toggleActive
+      );
       const tr = document.createElement("tr");
       tr.className = "table-row";
       // star button cell
@@ -188,16 +193,10 @@ async function fetchTopCoins() {
   }
 }
 
-// Call on load
-window.addEventListener("DOMContentLoaded", () => {
-  fetchTopCoins();
-  // Optionally refresh every X minutes:
-  // setInterval(fetchTopCoins, 5 * 60 * 1000);
-});
+window.addEventListener("DOMContentLoaded", async () => {
+  await fetchTopCoins();
 
-document.addEventListener("DOMContentLoaded", async () => {
   const apiUrl = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=8&page=1&sparkline=false&_=${Date.now()}`;
-
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
